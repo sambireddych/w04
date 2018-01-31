@@ -16,19 +16,20 @@ var App = {
     App.getEstimate();
     App.displayExploreButtons();
     App.showExample();
+    App.rememberClicks();
   },
   getFirstName: function () {
     let answer = prompt("What is your first name", "Notorious");
     if (answer != null) {
-      // document.getElementById("first").innerHTML = answer;
-      $("#first").html(answer); // $ = jQuery object; in jQuery use # with id, . with class
+      $("#first").html(answer); // $ = jQuery object, uses CSS selectors
+      sessionStorage.firstName = answer
     }
   },
   getLastName: function () {
-    let answer = prompt("What is your last name", "Nora");
+    const s = sessionStorage.firstName + ", what is your last name"
+    let answer = prompt(s, "Nora");
     if (answer != null) {
-      //document.getElementById("last").innerHTML = answer;
-      $("#last").html(answer);  // passing in the inner html with the  jQuery html() method 
+      $("#last").html(answer);  // setter
     }
   },
   getWidth: function () {
@@ -142,6 +143,16 @@ var App = {
       "As you hit F11 and step through your code, the values of local variables appear beside your code - very helpful in debugging.\n\n" +
       "Caution: Hitting F11 in VS Code will make your top-level menu disapper. Hit F11 again to bring it back.\n"
     )
+  },
+  rememberClicks: function () {
+    if (localStorage.getItem("clicks")) { // use getter
+      const value = Number(localStorage.clicks) + 1  // or property
+      localStorage.setItem("clicks", value)  // use setter
+    } else {
+      localStorage.clicks = 1 // or property
+    }
+    s = "You have clicked this button " + localStorage.clicks + " times"
+    $("#clicks").html(s) // display forever clicks 
   }
 };
 
