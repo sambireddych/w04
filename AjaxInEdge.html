@@ -1,21 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-  </script>
-  <script>
-    $(function () {
-      $("button").click(function () {
-        $.ajax({
-          url: "play.html",
-          success: function (result) {
-            $("#playspace").html(result);
-          }
-        })
-      })
-    })
-  </script>
+  <title>Ajax Example</title>
 </head>
 
 <body>
@@ -24,7 +11,23 @@
   <button>Click here to make AJAX call</button>
   <p></p>
   <article id="playspace">
-    <section>Watch jQuery and AJAX replace this content</section>
+    Watch jQuery and AJAX replace this content
   </article>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script>
+    $(function () {
+      $("button").click(function () {
+        $.ajax({
+          url: "AjaxPlay.html",
+          success: function (result) {
+            $("#playspace").html(result);
+          }
+        })
+      })
+    })
+  </script>
 </body>
+
 </html>

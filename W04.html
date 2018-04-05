@@ -17,18 +17,22 @@
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-          </button>
+				 aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 				<a class="navbar-brand" href="#">W04 Sheep Ranch</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="About.html">About</a></li>
-					<li><a href="Contact.html">Contact</a></li>
+					<li>
+						<a href="About.html">About</a>
+					</li>
+					<li>
+						<a href="Contact.html">Contact</a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -40,8 +44,10 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<p>This assignment introduces simplified scripting with jQuery. </p>
-				<p>The code is available at <a href="https://bitbucket.org/professorcase/w04">https://bitbucket.org/professorcase/w04</a>.</p>
-				<p>Results of the unit tests are available at <a href="test/test.html">test/test.html</a>.</p>
+				<p>The code is available at
+					<a href="https://bitbucket.org/professorcase/w04">https://bitbucket.org/professorcase/w04</a>.</p>
+				<p>Results of the unit tests are available at
+					<a href="test/test.html">test/test.html</a>.</p>
 				<br/>
 				<p>Currently, the application gets the user's name and the size of their ranch. The app calculates square miles and estimates
 					how many sheep they can hold on their land.</p>
@@ -51,27 +57,43 @@
 				<br/>
 				<p>Your new application should:</p>
 				<ol>
-					<li>Request the name of the organization attending the event.</li>
-					<li>Ask the type of sporting event (e.g. football, soccer, volleyball).</li>
-					<li>Ask the number of rows the organzation wants to reserve.</li>
-					<li>Ask the number of seats per row the organzation wants to reserve.</li>
-					<li>Calculate the number of seats requested.</li>
-					<li>Display the number of students that will have a reserved seat.</li>
-					<li>Display one Bearcat logo for each reserved seat.</li>
-					<li>Change the application name displayed in the menu to a suitable name for your application.</li>
+					<li>Ask the name of the ticket buyer.</li>
+					<li>Ask the organization for which they are buying tickets.</li>
+					<li>Ask the number of rows the organization wants to reserve.</li>
+					<li>Ask the number of seats per row the organization wants to reserve.</li>
+					<li>Calculate the number of seats requested (rows * seats per row). Create and use a calculateSeats() function that returns
+						the number of seats given number of rows and seats per row. If the number cannot be calculated or inputs are bad or
+						too large, it should return 0.
+						<li>Display the number of students that will have a seat (assume 1 student per seat).</li>
+						<li>Display one Bearcat logo (or other image of your choice) for each seat.</li>
+						<li>Display a unique application name in the nav bar.</li>
+						<li>Use variable names and prompts appropriate to your new application. </li>
 				</ol>
 				<br>
 				<p>Click the button to start the app.</p>
 				<br>
 				<!-- http://v4-alpha.getbootstrap.com/components/buttons/ -->
-				<button onclick="App.launch()" class="btn btn-lg btn-danger">Click me</button> <br/> <br/>
+				<button onclick="App.launch()" class="btn btn-lg btn-danger">Click me</button>
+				<br/>
+				<br/>
+				<aside id="clicks"></aside>
 			</div>
 			<div class="col-sm-12">
 				<br/>
-				<span id="first"></span> <span id="last"></span><br/>
-				<span id="width"></span> <span class="displayText">x</span> <span id="length"></span> <span class="displayText">=</span>
-				<span id="area"></span> <span class="displayText">sq miles</span><br/>
-				<span class="displayText">~</span> <span id="count"> </span> <span class="displayText">sheep</span><br/>
+				<span id="first"></span>
+				<span id="last"></span>
+				<br/>
+				<span id="width"></span>
+				<span class="displayText">x</span>
+				<span id="length"></span>
+				<span class="displayText">=</span>
+				<span id="area"></span>
+				<span class="displayText">sq miles</span>
+				<br/>
+				<span class="displayText">~</span>
+				<span id="count"> </span>
+				<span class="displayText">sheep</span>
+				<br/>
 
 				<span id="displayPlace">&nbsp;</span>
 				<div class="displayExploreButtons">

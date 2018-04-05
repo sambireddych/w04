@@ -143,6 +143,16 @@ var App = {
       "As you hit F11 and step through your code, the values of local variables appear beside your code - very helpful in debugging.\n\n" +
       "Caution: Hitting F11 in VS Code will make your top-level menu disapper. Hit F11 again to bring it back.\n"
     )
+  },
+  rememberClicks: function () {
+    if (localStorage.getItem("clicks")) { // use getter
+      const value = Number(localStorage.clicks) + 1  // or property
+      localStorage.setItem("clicks", value)  // use setter
+    } else {
+      localStorage.clicks = 1 // or property
+    }
+    s = "You have clicked this button " + localStorage.clicks + " times"
+    $("#clicks").html(s) // display forever clicks 
   }
 }
 

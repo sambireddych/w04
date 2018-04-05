@@ -2,6 +2,8 @@
 
 Learning JavaScript and jQuery by interacting with a user. 
 
+Examples include working with local storage and session storage.
+
 # Uses
 
 - jQuery, a JavaScript library that simplifies client-side scripting
