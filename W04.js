@@ -22,8 +22,6 @@ var App = {
   rememberClicks: rememberClicks
 }
 
-
-
 function launch() {
   const first = getFirstName()
   const last = getLastName()
@@ -34,13 +32,13 @@ function launch() {
 
   // update page contents 
   $(".displayText").css('display', 'inline-block')  //overwrites display: hidden to make it visible 
-  $("#first").html(first) 
-  $("#last").html(last) 
-  $("#width").html(width) 
-  $("#length").html(length) 
-  $("#area").html(area) 
-  $("#count").html(count) 
-  $("#displayPlace").html('') 
+  $("#first").html(first)
+  $("#last").html(last)
+  $("#width").html(width)
+  $("#length").html(length)
+  $("#area").html(area)
+  $("#count").html(count)
+  $("#displayPlace").html('')
 
   alert("You have about " + area + " square miles.")
   alert("You could have about " + count + " sheep.")
@@ -51,14 +49,35 @@ function launch() {
   displayExploreButtons()
 }
 
+function cleanInput(inputString) {
+  // create a regular expression to find all characters that are not (^) English alphabet chars 
+  const re = /[^a-zA-Z]/g
+  let justAlpha = inputString.replace(re, '') // strip non-alpha chars out
+  return justAlpha
+}
+
 function getFirstName() {
-  const answer = prompt("What is your first name", "Notorious")
-  return answer
+  const MAX_FIRST = 25
+  const answer = prompt("What is your first name", "Notor;<ious>")
+  const justAlphaAnswer = cleanInput(answer)
+
+  if (justAlphaAnswer.length > MAX_FIRST) {
+    alert('The given answer was greater than ' + MAX_FIRST + '. Using first' + MAX_FIRST + ' characters.')
+    justAlphaAnswer = justAlphaAnswer.substr(0, MAX_FIRST)
+  }
+  return justAlphaAnswer
 }
 
 function getLastName() {
-  const answer = prompt("What is your last name", "Nora")
-  return answer
+  const MAX_LAST = 30
+  const answer = prompt("What is your last name", "No#ra")
+  const justAlphaAnswer = cleanInput(answer)
+
+  if (justAlphaAnswer.length > MAX_LAST) {
+    alert('The given answer was greater than ' + MAX_LAST + '. Using first' + MAX_LAST + ' characters.')
+    justAlphaAnswer = justAlphaAnswer.substr(0, MAX_LAST)
+  }
+  return justAlphaAnswer
 }
 
 function getWidth() {
@@ -67,10 +86,10 @@ function getWidth() {
   const MIN_WIDTH = 1;
   const answer = prompt("What is the width of your farm in miles", DEFAULT_WIDTH)
   let width = parseFloat(answer)
-  if (Number.isNaN(width) ) {
+  if (Number.isNaN(width)) {
     alert('The given argument is not a number. Using ' + DEFAULT_WIDTH + '.')
     width = DEFAULT_WIDTH
-  } 
+  }
   else if (width > MAX_WIDTH) {
     alert('The given argument is greater than ' + MAX_WIDTH + '. Using ' + MAX_WIDTH + '.')
     width = MAX_WIDTH
@@ -108,14 +127,14 @@ function calculateArea(givenLength, givenWidth) {
   if (typeof givenLength !== 'number' || typeof givenWidth !== 'number') {
     throw Error('The given argument is not a number')
   }
-  if  (givenLength < MIN_VALUE) {
+  if (givenLength < MIN_VALUE) {
     givenLength = MIN_VALUE
   }
-  if  (givenWidth < MIN_VALUE) {
+  if (givenWidth < MIN_VALUE) {
     givenWidth = MIN_VALUE
   }
   // calculate the answer and store in a local variable so we can watch the value
-  let area =  givenLength * givenWidth
+  let area = givenLength * givenWidth
 
   // return the result of our calculation to the calling function
   return area
