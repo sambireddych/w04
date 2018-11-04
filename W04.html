@@ -1,117 +1,126 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>W04 Sheep Ranch</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="W04.css">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>W04 Samsung</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="W04.css">
 </head>
 
 <body>
-	<!-- BootStrap navbar menu changes with the screen size-->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-				 aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">W04 Sheep Ranch</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li>
-						<a href="About.html">About</a>
-					</li>
-					<li>
-						<a href="Contact.html">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <!-- BootStrap navbar menu changes with the screen size-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">W04 bearcat logo print and seats availability</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="About.html">About</a>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-	<!-- A BootStrap container is used to adjust the layout of the contents based on screen size. .container uses pre-built screen sizes, while .container-fluid adjusts continously.-->
-	<div class="container-fluid">
-		<!-- BootStrap grid system using one row that could have several columns (when the screen size is large enough) -->
-		<div class="row">
-			<div class="col-sm-12">
-				<p>This assignment introduces simplified scripting with jQuery. </p>
-				<p>The code is available at
-					<a href="https://bitbucket.org/professorcase/w04">https://bitbucket.org/professorcase/w04</a>.</p>
-				<p>Results of the unit tests are available at
-					<a href="test/test.html">test/test.html</a>.</p>
-				<br/>
-				<p>Currently, the application gets the user's name and the size of their ranch. The app calculates square miles and estimates
-					how many sheep they can hold on their land.</p>
-				<br/>
-				<p>Your goal is to create a new app using jQuery that calculates the number of seats reserved at the
-					next Bearcats sporting event.</p>
-				<br/>
-				<p>Your new application should:</p>
-				<ol>
-					<li>Ask the name of the ticket buyer.</li>
-					<li>Ask the organization for which they are buying tickets.</li>
-					<li>Ask the number of rows the organization wants to reserve.</li>
-					<li>Ask the number of seats per row the organization wants to reserve.</li>
-					<li>Calculate the number of seats requested (rows * seats per row). Create and use a calculateSeats() function that returns
-						the number of seats given number of rows and seats per row. If the number cannot be calculated or inputs are bad or
-						too large, it should return 0.
-						<li>Display the number of students that will have a seat (assume 1 student per seat).</li>
-						<li>Display one Bearcat logo (or other image of your choice) for each seat.</li>
-						<li>Display a unique application name in the nav bar.</li>
-						<li>Use variable names and prompts appropriate to your new application. </li>
-				</ol>
-				<br>
-				<p>Click the button to start the app.</p>
-				<br>
-				<!-- http://v4-alpha.getbootstrap.com/components/buttons/ -->
-				<button onclick="App.launch()" class="btn btn-lg btn-danger">Click me</button>
-				<br/>
-				<br/>
-				<aside id="clicks"></aside>
-			</div>
-			<div class="col-sm-12">
-				<br/>
-				<span id="first"></span>
-				<span id="last"></span>
-				<br/>
-				<span id="width"></span>
-				<span class="displayText">x</span>
-				<span id="length"></span>
-				<span class="displayText">=</span>
-				<span id="area"></span>
-				<span class="displayText">sq miles</span>
-				<br/>
-				<span class="displayText">~</span>
-				<span id="count"> </span>
-				<span class="displayText">sheep</span>
-				<br/>
+    <!-- A BootStrap container is used to adjust the layout of the contents based on screen size. .container uses pre-built screen sizes, while .container-fluid adjusts continously.-->
+    <div class="container-fluid">
+        <!-- BootStrap grid system using one row that could have several columns (when the screen size is large enough) -->
+        <div class="row">
+            <div class="col-sm-12">
+                <p>This assignment introduces simplified scripting with jQuery. </p>
+                <p>
+                    The code is available at
+                    <a href="https://bitbucket.org/professorcase/w04">https://bitbucket.org/professorcase/w04</a>.
+                </p>
+                <p>
+                    Results of the unit tests are available at
+                    <a href="test/test.html">test/test.html</a>.
+                </p>
+                <br />
+                <p>
+                    Currently, the application gets the user's name and the size of their ranch. The app calculates square miles and estimates
+                    how many sheep they can hold on their land.
+                </p>
+                <br />
+                <p>
+                    Your goal is to create a new app using jQuery that calculates the number of seats reserved at the
+                    next Bearcats sporting event.
+                </p>
+                <br />
+                <p>Your new application should:</p>
+                <ol>
+                    <li>Ask the name of the ticket buyer.</li>
+                    <li>Ask the organization for which they are buying tickets.</li>
+                    <li>Ask the number of rows the organization wants to reserve.</li>
+                    <li>Ask the number of seats per row the organization wants to reserve.</li>
+                    <li>
+                        Calculate the number of seats requested (rows * seats per row). Create and use a calculateSeats() function that returns
+                        the number of seats given number of rows and seats per row. If the number cannot be calculated or inputs are bad or
+                        too large, it should return 0.
+                    <li>Display the number of students that will have a seat (assume 1 student per seat).</li>
+                    <li>Display one Bearcat logo (or other image of your choice) for each seat.</li>
+                    <li>Display a unique application name in the nav bar.</li>
+                    <li>Use variable names and prompts appropriate to your new application. </li>
+                </ol>
+                <br>
+                <p>Click the button to start the app.</p>
+                <br>
+                <!-- http://v4-alpha.getbootstrap.com/components/buttons/ -->
+                <button onclick="App.launch()" class="btn btn-lg btn-danger">Click me</button>
+                <br />
+                <br />
+                <aside id="clicks"></aside>
+            </div>
+            <div class="col-sm-12">
+                <br />
+                <span id="buyer"></span>
+                <span id="orgname"></span>
+                <br />
+                <span id="rows"></span>
+                <span class="displayText">x</span>
+                <span id="seatsperrow"></span>
+                <span class="displayText">=</span>
+                <span id="totalseats"></span>
+                <span class="displayText">students</span>
+                <br />
+                <span class="displayText">Total</span>
+                <span id="count"> </span>
+                <span class="displayText">students</span>
+                <br />
 
-				<span id="displayPlace">&nbsp;</span>
-				<div class="displayExploreButtons">
-					<button onclick="App.exploreHtml()" class="btn btn-lg btn-primary" id="btnExploreHtml">Explore the HTML</button>
-					<button onclick="App.exploreCode()" class="btn btn-lg btn-primary" id="btnExploreCode">Explore the Code</button>
-				</div>
-				<div class="col-sm-12">
-					<footer>
-						<p>&copy; NWMSU Web Apps Spring 2018</p>
-					</footer>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /container -->
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="W04.js"></script>
+                <span id="displayPlace">&nbsp;</span>
+                <div class="displayExploreButtons">
+                    <button onclick="App.exploreHtml()" class="btn btn-lg btn-primary" id="btnExploreHtml">Explore the HTML</button>
+                    <button onclick="App.exploreCode()" class="btn btn-lg btn-primary" id="btnExploreCode">Explore the Code</button>
+                </div>
+                <div class="col-sm-12">
+                    <footer>
+                        <p>&copy; NWMSU Web Apps Spring 2018</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="W04.js"></script>
 </body>
 
 </html>

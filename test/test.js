@@ -30,11 +30,15 @@ QUnit.test("Here's a test that should always pass", function (assert) {
     assert.ok(1 <= "3", "1<3 - the first agrument is 'truthy', so we pass!");
 });
 
-QUnit.test('Testing calculateArea function with several sets of inputs', function (assert) {
-  assert.equal(App.calculateArea(5, 5), 25, 'Tested with two relatively small positive numbers');
-  assert.equal(App.calculateArea(500, 500), 250000, 'Tested with two large positive numbers. ');
-  assert.equal(App.calculateArea(-5, -5), 1, 'Tested with two negative numbers. Any arguments less than 1 will be set to 1.');
-  assert.throws(function () { App.calculateArea('a', 'b'); }, /The given argument is not a number/, 'Passing in a string correctly raises an Error');
+QUnit.test('Testing calculateNoOfSeats function with several sets of inputs', function (assert) {
+    assert.equal(App.calculatedSeats(3, 4), 12, 'Calculated and tested with two (3,4) small Positive Numbers');
+    assert.equal(App.calculatedSeats(-3, -4), 0, 'calculated and Tested with two (-3,-4) negative numbers. Any arguments less than 1 will be set to 1.');
+    assert.equal(App.calculatedSeats(0, 0), 0, 'Calculated and tested with two zeros(0,0)');
+    assert.equal(App.calculatedSeats(1234567, 9876543), 0, 'Calculated and tested with two(1234567,9876543) big numbers. Any arguments greater than max value will be set to 0 ');
+    assert.equal(App.calculatedSeats('', ''), 0, 'Calculated and Tested with two empty values.');
+    assert.equal(App.calculatedSeats('dfg', 'ert'), 0, 'Calculated and Tested with Strings. Any arguments with strings will be set as a 0.');
+    assert.equal(App.calculatedSeats('2.6', '0.0'), 0, 'Calculated and Tested with two double values,Any arguments apart from int values can be set as a 0');
+    //assert.throws(function () { App.calculatedSeats('a', 'b'); }, 'The given argument is not a number', 'Passing in a string correctly raises an Error');
 });
 
 
